@@ -16,7 +16,7 @@ require('dotenv').config();
 // define validation for all the env vars
 var envVarsSchema = _joi2.default.object({
   NODE_ENV: _joi2.default.string().allow(['development', 'production', 'test', 'provision']).default('development'),
-  PORT: _joi2.default.number().default(3000)
+  PORT: _joi2.default.number().default(3001)
 }).unknown().required();
 
 var _Joi$validate = _joi2.default.validate(process.env, envVarsSchema),

@@ -4,13 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./dist/app.js",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm start",
+    "server": "node ./dist/app.js",
     "babel-node": "babel-node",
     "dev": "nodemon --exec npm run babel-node app.js --debug",
     "build": "gulp",
     "babel": "babel-node app.js",
     "babel-debug": "babel-node app.js --debug",
-    "test": "babel-node ./server/tests/string.test.js"
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors --require babel-core/register server/tests --recursive"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "compression": "^1.7.2",
+    "concurrently": "^3.5.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
@@ -44,6 +47,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
+    "cross-env": "^5.1.4",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
