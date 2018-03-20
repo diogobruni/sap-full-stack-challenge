@@ -1,0 +1,60 @@
+{
+  "name": "sap-full-stack-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./dist/app.js",
+    "babel-node": "babel-node",
+    "dev": "nodemon --exec npm run babel-node app.js --debug",
+    "build": "gulp",
+    "babel": "babel-node app.js",
+    "babel-debug": "babel-node app.js --debug",
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors --require babel-core/register server/tests --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogobruni/sap-full-stack-challenge.git"
+  },
+  "author": "Diogo Bruni <diogobruni@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogobruni/sap-full-stack-challenge/issues"
+  },
+  "homepage": "https://github.com/diogobruni/sap-full-stack-challenge#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-validation": "^1.0.2",
+    "express-winston": "^2.5.0",
+    "helmet": "^3.12.0",
+    "http-status": "^1.0.1",
+    "is-palindrome": "^0.3.0",
+    "joi": "^13.1.2",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "winston": "^2.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "cross-env": "^5.1.4",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-util": "^3.0.8",
+    "mocha": "^5.0.4",
+    "nodemon": "^1.17.2",
+    "run-sequence": "^2.2.1",
+    "supertest": "^3.0.0"
+  }
+}
